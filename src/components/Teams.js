@@ -10,7 +10,12 @@ const Teams = (props) => {
     const [points4, setPoints4] = useState(0);
 
    
-    
+    useEffect( () => {
+        !value ? setPoints1(0) : setPoints1(points1);
+        !value ? setPoints2(0) : setPoints2(points2);
+        !value ? setPoints3(0) : setPoints3(points3);
+        !value ? setPoints4(0) : setPoints4(points4);
+    }, [reset]);
 
     return (
         <div className="teams">
