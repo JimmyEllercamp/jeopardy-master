@@ -2,6 +2,8 @@ import './App.css';
 import axios from 'axios';
 import { useState } from 'react';
 import GameCard from './components/GameCard.js';
+import Header from './components/Header.js';
+import Teams from './components/Teams.js';
 
 
 function App() {
@@ -25,25 +27,27 @@ function App() {
             }).then( (response) => {
                 const questionObject = response.data[0];
                 setQuestion(questionObject.question);
-                setAnswer(questionObject.answer);
-                setValue(questionObject.value);
-                // setQuestion(`Question: ` + questionObject.question);
-                // setAnswer(`Answer: ` + questionObject.answer);
-                // setValueStatement(questionObject.value);
-                // setValue(`Points: ` + valueStatement);
-                // !value ? setValue(`Points: ` + 300) : setValue(`Points: ` + questionObject.value);
-                // setPointsValue(questionObject.value);
-                // (value === 'null') ? setValue(`Points: ` + 200) : setValue(`Points: ` + questionObject.value);
-                // setGameButton("Next Question");
+                setAnswer(questionObject.answer);  
+                questionObject.value ? setValue(questionObject.value) : setValue(200);
+
                 })
+    }
+
+    const reset = () => {
+      setQuestion("");
+      setAnswer("");
+      setValue();
+
     }
 
 
 
 
   return (
-    <div className="App">
-      <GameCard question={question} answer={answer} value={value} handleClick={handleClick}/>
+    <div className="App wrapper">
+      <Header />
+      <Teams value={value} reset={reset}/>
+      <GameCard question={question} answer={answer} value={value} handleClick={handleClick} reset={reset}/>
 
       
     </div>

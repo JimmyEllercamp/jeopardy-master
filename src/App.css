@@ -1,5 +1,23 @@
 .App {
   text-align: center;
+  margin: 0 auto;
+  height: 100vh;
+  
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  padding: 0 5%;
+}
+
+.wrapper {
+  width: 85%;
+  max-width: 1200px;
 }
 
 .App-logo {
