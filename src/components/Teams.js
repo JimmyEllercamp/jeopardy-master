@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 const Teams = (props) => {
 
-    const {value, reset, question} = props;
+    const {value, reset} = props;
     const [points1, setPoints1] = useState(0);
     const [points2, setPoints2] = useState(0);
     const [points3, setPoints3] = useState(0);
@@ -16,6 +16,11 @@ const Teams = (props) => {
         !value ? setPoints3(0) : setPoints3(points3);
         !value ? setPoints4(0) : setPoints4(points4);
     }, [reset]);
+
+    const winner = () => {
+        console.log(`Winner!`);
+    }
+
 
     return (
         <div className="teams">
@@ -41,6 +46,7 @@ const Teams = (props) => {
                     <button onClick={ () => { value ? setPoints4(points4 + value) : setPoints4(0); }}>Add Points</button>
                 </li>
             </ul>
+            <button onClick={winner}>Declare Winner</button>
         </div>
     )
 }

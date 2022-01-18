@@ -8,7 +8,6 @@ import Teams from './components/Teams.js';
 
 function App() {
 
-    // const apiUrl = 'http://jservice.io/api/random';
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
     const [value, setValue] = useState();
@@ -37,7 +36,6 @@ function App() {
       setQuestion("");
       setAnswer("");
       setValue();
-
     }
 
 
