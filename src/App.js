@@ -4,6 +4,7 @@ import { useState } from 'react';
 import GameCard from './components/GameCard.js';
 import Header from './components/Header.js';
 import Teams from './components/Teams.js';
+import Footer from './components/Footer.js';
 
 
 function App() {
@@ -42,11 +43,11 @@ function App() {
 
 
   return (
-    <div className="App wrapper">
+    <div className="App">
       <Header />
       <Teams value={value} reset={reset}/>
       <GameCard question={question} answer={answer} value={value} handleClick={handleClick} reset={reset}/>
-
+      <Footer />
       
     </div>
   );
