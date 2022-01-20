@@ -47,7 +47,7 @@ function App() {
     <div className="App">
       <Header />
       <Teams value={value} readyState={readyState}/>
-      <GameCard question={question} answer={answer} value={value} handleClick={handleClick} reset={reset}/>
+      <GameCard question={question} answer={answer} value={value} handleClick={handleClick} reset={reset} readyState={readyState}/>
       <Footer />
       
     </div>

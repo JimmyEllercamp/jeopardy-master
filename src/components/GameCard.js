@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 const GameCard = (props) => {
 
-    const {question, answer, value, handleClick, questionObject, reset} = props;
+    const {question, answer, value, handleClick, reset, readyState} = props;
 
     const [currentQuestion, setCurrentQuestion] = useState("");
     const [currentAnswer, setCurrentAnswer] = useState("Ready To Play?");
@@ -13,7 +13,7 @@ const GameCard = (props) => {
         question ? setCurrentQuestion('Question: ' + question) : setCurrentQuestion('');
         answer ? setCurrentAnswer('Answer: ' + answer) : setCurrentAnswer('Ready To Play?');
         value ? setCurrentValue('Points: ' + value) : setCurrentValue();
-    }, [handleClick]);
+    }, [readyState, question, answer, value]);
 
     return (
         <section className="gameCard wrapper">
@@ -23,8 +23,8 @@ const GameCard = (props) => {
                 <p>{currentValue}</p>
             </div>
             <div className="buttons">
-                <button className="startButton" onClick={handleClick}>{currentQuestion ? `Next Question` : `Ready To Play?`}</button>
-                <button className="resetButton"onClick={reset}>Start Again?</button>
+                <button onClick={handleClick}>{currentQuestion ? `Next Question` : `Ready To Play?`}</button>
+                <button onClick={reset}>Start Again?</button>
             </div>
         </section>
     )
