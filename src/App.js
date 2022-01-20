@@ -14,7 +14,7 @@ function App() {
     const [value, setValue] = useState();
     const [readyState, setReadyState] = useState(true);
     const handleClick = () => {
-        const apiUrl = 'http://jservice.io/api/random';
+        const apiUrl = 'https://jservice.io/api/random';
 
         axios({
                 url: apiUrl,
