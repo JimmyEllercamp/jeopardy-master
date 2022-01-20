@@ -12,7 +12,7 @@ function App() {
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
     const [value, setValue] = useState();
-
+    const [readyState, setReadyState] = useState(true);
     const handleClick = () => {
         const apiUrl = 'http://jservice.io/api/random';
 
@@ -29,7 +29,7 @@ function App() {
                 setQuestion(questionObject.question);
                 setAnswer(questionObject.answer);  
                 questionObject.value ? setValue(questionObject.value) : setValue(200);
-
+                setReadyState(false);
                 })
     }
 
@@ -37,6 +37,7 @@ function App() {
       setQuestion("");
       setAnswer("");
       setValue();
+      setReadyState(true);
     }
 
 
@@ -45,7 +46,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Teams value={value} reset={reset}/>
+      <Teams value={value} readyState={readyState}/>
       <GameCard question={question} answer={answer} value={value} handleClick={handleClick} reset={reset}/>
       <Footer />
       

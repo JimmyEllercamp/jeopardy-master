@@ -3,18 +3,18 @@ import { useEffect, useState } from 'react';
 
 const Teams = (props) => {
 
-    const {value, reset} = props;
+    const {value, readyState} = props;
     const [points1, setPoints1] = useState(0);
     const [points2, setPoints2] = useState(0);
     const [points3, setPoints3] = useState(0);
     const [points4, setPoints4] = useState(0);
    
     useEffect( () => {
-        !value ? setPoints1(0) : setPoints1(points1);
-        !value ? setPoints2(0) : setPoints2(points2);
-        !value ? setPoints3(0) : setPoints3(points3);
-        !value ? setPoints4(0) : setPoints4(points4);
-    }, [reset]);
+        setPoints1(0);
+        setPoints2(0);
+        setPoints3(0);
+        setPoints4(0);
+    }, [readyState]);
 
     return (
         <section className="teams flexing wrapper">
