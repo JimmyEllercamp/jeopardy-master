@@ -23,8 +23,8 @@ const GameCard = (props) => {
                 <p>{currentValue}</p>
             </div>
             <div className="buttons">
-                <button onClick={handleClick}>{currentQuestion ? `Next Question` : `Ready To Play?`}</button>
-                <button onClick={reset}>Start Again?</button>
+                <button className="startButton" onClick={handleClick}>{currentQuestion ? `Next Question` : `Ready To Play?`}</button>
+                <button className="resetButton"onClick={reset}>Start Again?</button>
             </div>
         </section>
     )
