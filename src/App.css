@@ -1,3 +1,7 @@
+
+/* ____________________________________________________ SETUP ____________________________________________________ */
+
+
 html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
 
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
@@ -7,6 +11,9 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 *, *:before, *:after {box-sizing: inherit}
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+
+/* ________________________________________ FONTS _________________________________________________ */
 
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Crafty+Girls&family=IBM+Plex+Serif:wght@500&family=Luckiest+Guy&family=Ranchers&display=swap');
 /*   font-family: 'Black Han Sans', sans-serif;
@@ -21,16 +28,23 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
     */
 
+/* _______________________________________ GENERAL STYLES _______________________________________ */
+
+  
 body {
     background-image: repeating-linear-gradient(to right, rgb(25, 23, 25), rgb(13, 34, 160) 1.5%, rgb(25, 23, 25) 3%);
-    /* opacity: 0.8; */
+}
+
+.wrapper {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .App {
   opacity: 1;
   text-align: center;
   margin: 0 auto;
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -75,13 +89,14 @@ a:focus {
   border-bottom: 1px solid rgb(252, 178, 67);
 }
 
+/* _______________________________________ HEADER _______________________________________ */
+
 header {
   margin-bottom: 5%;
 }
 
 h1 {
   text-align: end;
-  /* text-transform: uppercase; */
   margin-bottom: 2%;
   font-size: 2.5rem;
   position: relative;
@@ -92,28 +107,12 @@ h1 {
   animation: fadeIn 3s ease-out, rotation ease-out 2s, grow ease-out 2s;
 }
 
-@keyframes fadeIn {
-  0% {opacity: 0};
-  100% {opacity: 1};
-}
-
-@keyframes rotation {
-    0% {rotate: -15deg};
-    100% {rotate: 0deg};
-}
-
-/* @keyframes grow {
-  0%{font-size: 0.5rem};
-  100%{font-size: 2.5rem};
-} */
-
 
 header h2 {
   margin-bottom: 3%;
   font-family: 'Luckiest Guy', cursive;
   font-size: 2rem;
   color: rgb(243, 173, 102);
-  /* text-shadow: 5px 5px 2.5px rgb(63, 15, 18); */
   text-shadow: -1px 0 rgb(253, 248, 220),
   0 1px rgb(253, 248, 220),
   1px 0 rgb(253, 248, 220),
@@ -121,11 +120,22 @@ header h2 {
   letter-spacing: 2px;
 }
 
+
+/* _______________________________________ TEAMS _______________________________________ */
+
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+
 li {
-  /* border: 1px solid white; */
   width: 35%;
   padding: 5px 0;
-  /* margin: 0 5%; */
   background-image: linear-gradient(to right, rgba(100, 136, 247, 0), rgba(10, 34, 107, 0.7) 20%, rgb(62, 138, 247) 50%, rgba(10, 34, 107, 0.7) 80%, rgba(100, 136, 247, 0) 100%);
   box-shadow: 0 8px 8px rgb(25, 23, 25);
   font-family: 'Crafty Girls', cursive;
@@ -135,11 +145,11 @@ li p {
   padding: 3px 0;
 }
 
+
+/* _______________________________________ Game Card _______________________________________ */
+
 .gameCard {
-  margin-top: 10%;
   height: 35%;  
-  /* padding: 5% 0; */
-  /* border: 4px solid hotpink; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -163,6 +173,7 @@ li p {
   margin-top: 50px;
   border: 5px double white;
   box-shadow: 10px 10px 8px 3px rgb(63, 15, 18);
+  overflow: scroll;
 }
 
 .playCard h2 {
@@ -170,7 +181,7 @@ li p {
 }
 
 .playCard h3 {
-  animation: fadeIn 1s ease-out;
+  animation: fadeIn 2.5s ease-out;
 }
 
 .playCard::before {
@@ -199,25 +210,16 @@ li p {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  /* border: 1px solid orange; */
 }
 
 .buttons button {
   margin: 5%;
 }
 
-ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-}
 
-.wrapper {
-  width: 85%;
-  max-width: 1200px;
-  margin: 0 auto;
+footer {
+  font-family: 'Crafty Girls', cursive;
+  letter-spacing: 2px;
 }
 
 /* __________________________________ BUTTONS SECTION ________________________________________ */
@@ -241,10 +243,10 @@ button:focus {
   transform: scale(1.1);
   border: solid 2px rgb(82, 48, 13);
   background-color: rgb(228, 205, 0);
+}
 
-  /* rotate: 1deg; */
-  /* transition-duration: 0.3s;
-  transition-timing-function: ease-in; */
+button:active {
+ transform: scale(0.9); 
 }
 
 .team1button {
@@ -254,9 +256,11 @@ button:focus {
 
 .team1button:hover,
 .team1button:focus {
-  rotate: -5deg;
   box-shadow: -2px 3px 3px rgb(63, 15, 18);
+}
 
+.team1button:active {
+  rotate: -5deg;
 }
 
 .team2button {
@@ -266,9 +270,11 @@ button:focus {
 
 .team2button:hover,
 .team2button:focus {
-  rotate: -3deg;
   box-shadow: -2px 1px 3px rgb(63, 15, 18);
+}
 
+.team2button:active {
+  rotate: -2deg;
 }
 
 .team3button {
@@ -278,9 +284,11 @@ button:focus {
 
 .team3button:hover,
 .team3button:focus {
-  rotate: 3deg;
   box-shadow: 2px 1px 3px rgb(63, 15, 18);
+}
 
+.team3button:active {
+  rotate: 2deg;
 }
 
 .team4button {
@@ -290,9 +298,12 @@ button:focus {
 
 .team4button:hover,
 .team4button:focus {
-  rotate: 5deg;
   box-shadow: 3px 2px 3px rgb(63, 15, 18);
 
+}
+
+.team4button:active {
+  rotate: 5deg;
 }
 
 .startButton {
@@ -302,36 +313,49 @@ button:focus {
 
 .startButton:hover,
 .startButton:focus {
-  rotate: -3deg;
   box-shadow: -2px 1px 3px rgb(63, 15, 18);
+}
 
+.startButton:active {
+  rotate: -3deg;
+  
 }
 
 .resetButton {
-  transition-duration: 0.2s;
+  transition-duration: 0.1s;
   transition-timing-function: ease-out;
 }
 
+
 .resetButton:hover,
 .resetButton:focus {
-  rotate: 3deg;
   box-shadow: 2px 1px 3px rgb(63, 15, 18);
-
 }
 
-footer {
-  font-family: 'Crafty Girls', cursive;
-  letter-spacing: 2px;
+.resetButton:active {
+  rotate: 3deg;
 }
 
-/*   font-family: 'Black Han Sans', sans-serif;
+/* _______________________________________ ANIMATIONS ____________________________________________________ */
 
-    font-family: 'Crafty Girls', cursive;
 
-    font-family: 'Luckiest Guy', cursive;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
 
-    font-family: 'Ranchers', cursive; 
-    
-    font-family: 'IBM Plex Serif', serif;
+  100% {
+    opacity: 1;
+  }
+}
 
-    */
+@keyframes rotation {
+  0% {
+    rotate: -15deg;
+  }
+
+
+  100% {
+    rotate: 0deg;
+  }
+}
