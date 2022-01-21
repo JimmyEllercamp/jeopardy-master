@@ -30,6 +30,8 @@ function App() {
                 setAnswer(questionObject.answer);  
                 questionObject.value ? setValue(questionObject.value) : setValue(200);
                 setReadyState(false);
+                }).catch((error) => {
+                  console.log(`Errors, eh? We've all been there. That's where you are, right now: ` + error);
                 })
     }
 
