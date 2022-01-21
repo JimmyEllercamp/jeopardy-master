@@ -10,7 +10,7 @@ const GameCard = (props) => {
     const [currentValue, setCurrentValue] = useState();
 
     useEffect( () => {
-        question ? setCurrentQuestion('Question: ' + question) : setCurrentQuestion('');
+        question ? setCurrentQuestion('Question: ' + question) : setCurrentQuestion('Ever wanted to be Alex Trebek? Now you are.');
         answer ? setCurrentAnswer('Answer: ' + answer) : setCurrentAnswer('Ready To Play?');
         value ? setCurrentValue('Points: ' + value) : setCurrentValue();
     }, [readyState, question, answer, value]);
