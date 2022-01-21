@@ -22,7 +22,7 @@ function App() {
                 dataResponse: 'json',
                 params: {
                     format: 'json',
-                    count: 1,
+                    count: 0,
                 },
             }).then( (response) => {
                 const questionObject = response.data[0];
@@ -31,7 +31,7 @@ function App() {
                 questionObject.value ? setValue(questionObject.value) : setValue(200);
                 setReadyState(false);
                 }).catch((error) => {
-                  console.log(`Errors, eh? We've all been there. That's where you are, right now: ` + error);
+                  console.log(`Errors, eh? We've all been there. That's where you are, right now. I bet you feel silly. Silly, silly person... ` + error);
                 })
     }
 
