@@ -22,7 +22,7 @@ function App() {
                 dataResponse: 'json',
                 params: {
                     format: 'json',
-                    count: 0,
+                    count: 1,
                 },
             }).then( (response) => {
                 const questionObject = response.data[0];
