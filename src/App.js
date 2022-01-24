@@ -1,23 +1,57 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import { useState } from 'react';
+import GameCard from './components/GameCard.js';
+import Header from './components/Header.js';
+import Teams from './components/Teams.js';
+import Footer from './components/Footer.js';
+
 
 function App() {
+
+    const [question, setQuestion] = useState("");
+    const [answer, setAnswer] = useState("");
+    const [value, setValue] = useState();
+    const [readyState, setReadyState] = useState(true);
+    const handleClick = () => {
+        const apiUrl = 'https://jservice.io/api/random';
+
+        axios({
+                url: apiUrl,
+                method: 'GET',
+                dataResponse: 'json',
+                params: {
+                    format: 'json',
+                    count: 1,
+                },
+            }).then( (response) => {
+                const questionObject = response.data[0];
+                setQuestion(questionObject.question);
+                setAnswer(questionObject.answer);  
+                questionObject.value ? setValue(questionObject.value) : setValue(200);
+                setReadyState(false);
+                }).catch((error) => {
+                  console.log(`Errors, eh? We've all been there. That's where you are, right now. I bet you feel silly. Silly, silly person... ` + error);
+                })
+    }
+
+    const reset = () => {
+      setQuestion("");
+      setAnswer("");
+      setValue();
+      setReadyState(true);
+    }
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Teams value={value} readyState={readyState}/>
+      <GameCard question={question} answer={answer} value={value} handleClick={handleClick} reset={reset} readyState={readyState}/>
+      <Footer />
+      
     </div>
   );
 }
